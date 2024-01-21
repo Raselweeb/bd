@@ -790,7 +790,99 @@
 </style>                                                                         <div id="print_btn_div"><img src="https://bteb.gov.bd//themes/responsive_npf/images/print_btn.png" style="cursor: pointer;" onclick="print_content();" width="24" title="প্রিন্ট" /></div><div class="updateText" style="float:right;font-style:italic;font-size:.8em;color:#666;">সর্ব-শেষ হাল-নাগাদ: &#x09E8;&#x09EA; জানুয়ারী &#x09E8;&#x09E6;&#x09E8;&#x09E9;</div><hr id="print_div_hr" /><div id='printable_area'><h3>কম্পিউটার অফিস</h3>
 
 
-</style>                                                            <div id="div-view-pagination-pm-speech"><div style="float:right;" id="print_btn_div"><img src="/themes/responsive_npf/images/print_btn.png" style="cursor: pointer;" onclick="print_content();" width="24" title="প্রিন্ট" /></div><div id="printable_area"><script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</style>    
+	
+	
+	
+	
+	
+	<div class="sixteen columns" id="left-content">
+                        
+
+                                                                        <div id="div-view-pagination-notices"><div style="float:right;" id="print_btn_div"><img src="/themes/responsive_npf/images/print_btn.png" style="cursor: pointer;" onclick="print_content();" width="24" title="প্রিন্ট" /></div><div id="printable_area"><script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+<h3>
+	নোটিশ
+</h3>
+<table id="example1" class="table table-striped bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+	<thead>
+		<tr>
+			<th>ক্রমিক</th>
+	    	<th>শিরোনাম</th>
+	    	<th>প্রকাশের তারিখ</th>
+	   		<th>ডাউনলোড</th>
+		</tr>
+	</thead>
+	<tbody>
+	</tbody>
+</table>
+<div>
+	<a class="psc_button" href="/site/view/notices_archieve" title="আর্কাইভ">আর্কাইভ</a>
+</div><style>#example1  td:nth-child(1){
+	width: 5%;
+    text-align: left;
+}
+#example1  td:nth-child(2){
+	width: 75%;
+    text-align: left;
+}
+#example1  td:nth-child(3){
+  	width: 10%;
+    text-align: left;
+}
+#example1  td:nth-child(4){
+	width: 10%;
+    text-align: left;
+}
+.psc_button {
+    padding: 5px 11px;
+    background: #609513;
+    color: #fff !important;
+	font-size: 30px; 
+	line-height: 40px;
+}
+select {
+    width: 220px;
+    display: block;
+    margin-bottom: 0px;
+}
+.dataTables_length {
+    margin-bottom: 10px!important;
+}</style><script>$(document).ready(function() {
+	var domainId = '6340';
+	var subdomain = 'bteb.portal.gov.bd';
+	var contentType = 'notices';
+	var cur_lang = 'bn';
+	console.log('///api/datatable/notices_view.php?domain_id='+domainId+'&lang='+cur_lang+'&subdomain='+subdomain+'&content_type='+contentType);
+    $('#example1').DataTable({
+        "lengthMenu": [[20, 40, 60, 80, 100], [20, 40, 60, 80, 100]],
+        /*"bPaginationType": "full_numbers",*/
+        "bProcessing": true,
+        "bServerSide": true,
+		"ordering": false,
+		"sAjaxSource": '//bteb.gov.bd/api/datatable/notices_view.php?domain_id='+domainId+'&lang='+cur_lang+'&subdomain='+subdomain+'&content_type='+contentType,
+        "sServerMethod": "POST"
+    });
+});</script></div></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div id="div-view-pagination-pm-speech"><div style="float:right;" id="print_btn_div"><img src="/themes/responsive_npf/images/print_btn.png" style="cursor: pointer;" onclick="print_content();" width="24" title="প্রিন্ট" /></div><div id="printable_area"><script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
 <h3>
