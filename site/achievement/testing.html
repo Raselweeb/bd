@@ -1065,7 +1065,181 @@ display: inline;
                     
                                                                      
                                               
-                                                
+      
+
+
+
+
+<style></style><script></script><div class="nav_all_national_portal">
+	<h4>
+		সকল বাতায়ন
+	</h4>
+
+	<div class="batayon-con select-all-portal">
+		<select id="np-div-list">
+			<option selected="" value="">ওয়েবসাইট বাছাই করুন</option>
+			<option url="http://bangladesh.gov.bd/site/view/ministry_n_directorate_list" value="">মন্ত্রণালয়</option>
+			<option url="http://bangladesh.gov.bd/site/page/3c1910f1-686d-4a57-9400-0b2743241438" value="">অধিদপ্তর </option>
+			<option url="http://www.dhakadiv.gov.bd/" value="68">ঢাকা বিভাগ</option>
+			<option url="http://www.chittagongdiv.gov.bd/" value="36">চট্টগ্রাম বিভাগ</option>
+			<option url="http://www.rajshahidiv.gov.bd/" value="60">রাজশাহী বিভাগ</option>
+			<option url="http://www.khulnadiv.gov.bd/" value="65">খুলনা বিভাগ</option>
+			<option url="http://www.barisaldiv.gov.bd/" value="66">বরিশাল বিভাগ</option>
+			<option url="http://www.rangpurdiv.gov.bd/" value="69">রংপুর বিভাগ</option>
+			<option url="http://www.sylhetdiv.gov.bd/" value="67">সিলেট বিভাগ</option>
+		</select>
+		<input type="button" id="go-np-div-list" name="go-np" value="চলুন" />
+	</div>
+	
+	
+	<div id="div-np-dist-list" class="batayon-con select-all-portal" style="display: none;">
+		<select id="np-dist-list">
+		</select>
+		<input type="button" id="go-np-dist-list" name="go-np" value="চলুন" />
+	</div>
+	
+	<div id="div-np-upz-list" class="batayon-con select-all-portal" style="display: none;">
+		<select id="np-upz-list">
+		</select>
+		<input type="button" id="go-np-upz-list" name="go-np" value="চলুন" />
+	</div>
+	<div id="div-np-union-list" class="batayon-con select-all-portal" style="display: none;">
+		<select id="np-union-list">
+		</select>
+		<input type="button" id="go-np-union-list" name="go-np" value="চলুন" />
+	</div>
+	<div style="text-align: right; float: right; display:none;" id="np-msg-loading-icon">
+		<img src="/themes/responsive_npf/templates/bangladesh/images/ajax-loader.gif" />
+	</div>
+	
+	
+</div>
+
+
+<script>				
+	$(document).ready(function() {
+
+		var parent = "";
+		var domain_type = "";
+		var siteurl = "https://bangladesh.gov.bd";
+		
+		
+		$("#np-div-list").change(function() {
+			
+			
+			parent = $("#np-div-list").val();
+			domain_type = "District";
+
+			if (parent == "") {
+				//alert("Please select ministry/division");
+			} else {				
+				
+				$("#np-msg-loading-icon").css("display", "block");
+				
+				$.post(siteurl+"/cd.portal.nav.bangla.php", {parent: parent, domain_type: domain_type}, function(data, status) {
+					
+					$("#np-msg-loading-icon").css("display", "none");
+					$("#div-np-dist-list").css("display", "block");
+					$("#div-np-upz-list").css("display", "none");
+					$("#div-np-union-list").css("display", "none");
+					
+					$("#go-np-dist-list").css("display", "none");
+					$("#np-dist-list").html(data);
+					
+				});
+
+			}
+			
+		});
+		
+		
+		
+		
+		$("#np-dist-list").change(function() {
+			
+			$("#np-msg-loading-icon").css("display", "block");
+			parent = $("#np-dist-list").val();
+			domain_type = "Upazilla";
+
+			if (parent == "") {
+				alert("Please select District");
+			} else {
+
+				$.post(siteurl+"/cd.portal.nav.bangla.php", {parent: parent, domain_type: domain_type}, function(data, status) {
+					
+					$("#np-msg-loading-icon").css("display", "none");
+					$("#div-np-upz-list").css("display", "block");
+					$("#div-np-union-list").css("display", "none");
+					
+					$("#go-np-dist-list").css("display", "block");
+					$("#go-np-upz-list").css("display", "none");
+					
+					$("#np-upz-list").html(data);
+					
+				});
+
+			}
+			
+		});
+		
+		
+		$("#np-upz-list").change(function() {
+			
+			$("#np-msg-loading-icon").css("display", "block");
+			parent = $("#np-upz-list").val();
+			domain_type = "Union";
+
+			if (parent == "") {
+				alert("Please select Upazilla");
+			} else {
+
+				$.post(siteurl+"/cd.portal.nav.bangla.php", {parent: parent, domain_type: domain_type}, function(data, status) {
+					
+					$("#np-msg-loading-icon").css("display", "none");
+					$("#div-np-union-list").css("display", "block");
+					
+					$("#go-np-upz-list").css("display", "block");
+					
+					$("#np-union-list").html(data);
+					
+				});
+
+			}
+			
+		});
+		
+		
+
+		// GO TO URL
+		var site_url = "";
+		
+		$("#go-np-div-list").click( function(){			
+			site_url = $("#np-div-list option:selected").attr('url');
+			window.open(site_url, '_blank');																				
+		});
+		
+		$("#go-np-dist-list").click( function(){			
+			site_url = $("#np-dist-list option:selected").attr('url');
+			window.open(site_url, '_blank');																				
+		});
+		
+		$("#go-np-upz-list").click( function(){			
+			site_url = $("#np-upz-list option:selected").attr('url');
+			window.open(site_url, '_blank');																			
+		});
+		
+		$("#go-np-union-list").click( function(){		
+			site_url = $("#np-union-list option:selected").attr('url');
+			window.open(site_url, '_blank');																			
+		});
+		
+		
+		
+	});
+	
+</script>
+
+                                          
                                                 
                                                 
                                                 
