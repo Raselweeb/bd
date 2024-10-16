@@ -1905,6 +1905,77 @@ function openTab(evt, tabName) {
     transform: scale(1.05); /* হোভার করলে স্কেল বাড়ে */
 }
 
+      
+      
+      
+      
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    height: 400px;
+}
+
+.image-box {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+    width: 102px;
+    height: 160px;
+    
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    height: 120px;
+}
+
+.caption {
+    padding: 10px;
+    font-size: 14px;
+    color: #555;
+    height: 25px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}    
 </style>
 <script>
 function openTab(evt, tabName) {
@@ -1944,6 +2015,24 @@ function openFullScreen(image) {
     document.body.appendChild(fullScreenImage);
 }
 
+      
+  <!--family-function-->
+      const images = document.querySelectorAll('.gallery-image');
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modalImage');
+const captionText = document.getElementById('captionText');
+
+images.forEach(image => {
+    image.onclick = function() {
+        modal.style.display = "block";
+        modalImage.src = this.src;
+        captionText.innerHTML = this.nextElementSibling.innerHTML;
+    }
+});
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
 </script>
-<link rel="stylesheet" href="style-family.css">
-<script src="family.js" defer></script>
+
