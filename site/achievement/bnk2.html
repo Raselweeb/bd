@@ -784,7 +784,78 @@
 </style>                                                                         <div id="print_btn_div"><img src="https://bteb.gov.bd//themes/responsive_npf/images/print_btn.png" style="cursor: pointer;" onclick="print_content();" width="24" title="প্রিন্ট" /></div><div class="updateText" style="float:right;font-style:italic;font-size:.8em;color:#666;">সর্ব-শেষ হাল-নাগাদ: &#x09E8;&#x09EA; জানুয়ারী &#x09E8;&#x09E6;&#x09E8;&#x09E9;</div><hr id="print_div_hr" /><div id='printable_area'><h3>আমার পারিবারিক ব্যাক্তিবর্গ</h3>
 
 
+<!--family-photo-->
+	<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ইমেজ গ্যালারী</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gallery">
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ১" class="gallery-image">
+            <p class="caption"> আলী হোসেন</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ২" class="gallery-image">
+            <p class="caption">রাহিলা বেগম</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৩" class="gallery-image">
+            <p class="caption">ফাহিমা বেগম</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৪" class="gallery-image">
+            <p class="caption">মোঃ ইলিয়াস খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৫" class="gallery-image">
+            <p class="caption">মোঃ সবুর খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৬" class="gallery-image">
+            <p class="caption">মোঃ হাসান খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৭" class="gallery-image">
+            <p class="caption">মোঃ রাসেল খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৮" class="gallery-image">
+            <p class="caption">মোঃ সোহেল খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ৯" class="gallery-image">
+            <p class="caption">জুয়েল খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ১০" class="gallery-image">
+            <p class="caption">মোঃ ইয়াসিন খান</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ১১" class="gallery-image">
+            <p class="caption">হনুফা বেগম</p>
+        </div>
+        <div class="image-box">
+            <img src="https://raselweeb.github.io/info/wp-content/uploads/2024/Rasel-cover-pic.jpg" alt="ছবি ১২" class="gallery-image">
+            <p class="caption">মাকসুদা বেগম</p>
+        </div>
+    </div>
 
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="captionText" class="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+	
+<!--family-subphotos-->
 
 
 	<!DOCTYPE html>
@@ -811,7 +882,7 @@
             <button class="tab" onclick="openTab(event, 'tab5')">মোঃ সোহেল খান</button>
             <button class="tab" onclick="openTab(event, 'tab6')">মোঃ জুয়েল খান</button>
             <button class="tab" onclick="openTab(event, 'tab7')">মোঃ ইয়াসিন খান</button>
-            <button class="tab" onclick="openTab(event, 'tab8')">মোসাঃ মাকসুদা বেগম</button>
+            <button class="tab" onclick="openTab(event, 'tab8')">মাকসুদা বেগম</button>
             <button class="tab" onclick="openTab(event, 'tab9')">মোসাঃ হনুফা বেগম</button>
             <button class="tab" onclick="openTab(event, 'tab10')">ট্যাব ১০</button>
         </div>
@@ -1770,12 +1841,15 @@ function openTab(evt, tabName) {
 <style>
 
 
+      
 .tabs {
+    margin-top: 10px;
     width: 130px;
     background-color: ; /* গ্রীন */
 }
 
 .tab {
+     
     background-color: #4CAF50; /* গ্রীন */
     color: white;
     border: none;
@@ -1796,13 +1870,13 @@ function openTab(evt, tabName) {
 }
 
 .tab-content {
-    margin-top: -590px;
+    margin-top: -610px;
     flex: 1;
     padding: 20px;
  
   width:538px;
   margin-left: 135px;
-  height:538px;
+  height:588px;
 }
 
 .gallery {
@@ -1817,6 +1891,7 @@ function openTab(evt, tabName) {
     text-align: center;
     background-color: white;
   width:120px;
+      height: 150px;
 }
 
 .image-item img {
@@ -1870,3 +1945,5 @@ function openFullScreen(image) {
 }
 
 </script>
+<link rel="stylesheet" href="style-family.css">
+<script src="family.js" defer></script>
