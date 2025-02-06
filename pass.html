@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পাসওয়ার্ড দিয়ে প্রবেশ</title>
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var correctPassword = "12345"; // সঠিক পাসওয়ার্ড
+
+            if (password === correctPassword) {
+                window.location.href = "your_link.html"; https://raselweeb.github.io/bd/site/achievement/data.html
+            } else {
+                alert("ভুল পাসওয়ার্ড! দয়া করে সঠিক পাসওয়ার্ড দিন।");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>পাসওয়ার্ড দিয়ে প্রবেশ করুন</h2>
+    <label for="password">পাসওয়ার্ড:</label>
+    <input type="password" id="password" name="password">
+    <button onclick="validatePassword()">প্রবেশ করুন</button>
+</body>
+</html>
